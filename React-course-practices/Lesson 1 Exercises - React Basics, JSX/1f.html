@@ -9,13 +9,22 @@
   <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
   
   <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+  <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
 
   <script type="text/babel">
     
-    const button = <button>Good Job!</button>;
+    const currentDate = dayjs().format('MMMM D YYYY');
+    const currentTime = dayjs().format('HH:mm:ss');
+
+    const dataAndTime = (
+      <div>
+      <p>Today is {currentDate}</p>
+      <p>Current time: {currentTime}</p>  
+      </div>
+    );
 
     const container = document.querySelector('.js-container');
-    ReactDOM.createRoot(container).render(button);
+    ReactDOM.createRoot(container).render(dataAndTime);
   </script>
 </body>
 </html>
